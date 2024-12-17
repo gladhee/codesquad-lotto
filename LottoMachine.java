@@ -9,13 +9,11 @@ public class LottoMachine {
 
 
     public void checkWin(LottoBall lottoBall) {
-        if (lottoBall.x == 0 && lottoBall.y == 0) {
-            lottoBall.isSelected = true;
-        }
+        lottoBall.checkGoal();
     }
 
     public boolean hitWall(LottoBall lottoBall) {
-        if (lottoBall.x == MAX_WALL || lottoBall.x == MAX_WALL || lottoBall.y == MAX_WALL || lottoBall.y == MAX_WALL){
+        if (lottoBall.getX() == MAX_WALL || lottoBall.getX() == MIN_WALL || lottoBall.getY() == MAX_WALL || lottoBall.getY() == MIN_WALL){
             return false;
         }
         return true;
