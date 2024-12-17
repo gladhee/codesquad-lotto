@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class LottoMachine {
 
     private static final int MAX_WALL = 20;
@@ -26,5 +28,13 @@ public class LottoMachine {
             }
         }
         return true;
+    }
+
+    public void addBallCount(LottoBall lottoBall){
+            int ballX = lottoBall.getX();
+            int ballY = lottoBall.getY();
+
+            ballCount[ballY][ballX]++;
+
     }
 }
