@@ -18,10 +18,13 @@ public class LottoBall {
         this.y += y;
     }
 
-    public void setSelected() {
-        this.isSelected = true;
+    public int getNumber() {
+        return number;
     }
 
+    public boolean getSelected() {
+        return isSelected;
+    }
 
     public void checkGoal() {
         if (this.x == 0 && this.y == 0) {
