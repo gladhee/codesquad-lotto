@@ -37,6 +37,7 @@ public class LottoGame {
 
             }
         }
+        printWinningNumber();
     }
 
     private void createLottoBalls() {
@@ -48,4 +49,16 @@ public class LottoGame {
             lottoBalls.add(new LottoBall(lottoNumber, initX, initY));
         }
     }
+
+    private void printWinningNumber() {
+        StringBuilder sb = new StringBuilder();
+
+        for (LottoBall lottoBall: winningBalls) {
+            sb.append(lottoBall.getNumber())
+                    .append(" ");
+        }
+
+        System.out.println(sb);
+    }
+
 }
