@@ -17,8 +17,8 @@ public class NumberGenerator {
 
         while (!alreadyNumbers.contains(number)) {
             number = pickRandomNumber(1, 45);
+            alreadyNumbers.add(number);
         }
-        alreadyNumbers.add(number);
 
         return number;
     }
