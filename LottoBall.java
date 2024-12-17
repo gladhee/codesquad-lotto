@@ -1,10 +1,11 @@
 public class LottoBall {
 
     private final int number;
+
     private int x;
+
     private int y;
     private boolean isSelected;
-
     public LottoBall(int number, int x, int y) {
         this.number = number;
         this.x = x;
@@ -27,4 +28,14 @@ public class LottoBall {
             this.isSelected = true;
         }
     }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+
 }
