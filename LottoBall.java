@@ -21,4 +21,10 @@ public class LottoBall {
         this.isSelected = true;
     }
 
+
+    public void checkGoal() {
+        if (this.x == 0 && this.y == 0) {
+            this.isSelected = true;
+        }
+    }
 }

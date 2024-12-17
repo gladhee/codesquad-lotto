@@ -9,9 +9,7 @@ public class LottoMachine {
 
 
     public void checkWin(LottoBall lottoBall) {
-        if (lottoBall.x == 0 && lottoBall.y == 0) {
-            lottoBall.isSelected = true;
-        }
+        lottoBall.checkGoal();
     }
 
     public boolean hitWall(LottoBall lottoBall) {
