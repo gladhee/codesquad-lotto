@@ -23,37 +23,39 @@ public class LottoGame {
             for (LottoBall lottoBall : lottoBalls) {
                 int moveX = numberGenerator.generateMovement();
                 int moveY = numberGenerator.generateMovement();
-                if (!lottoMachine.hitWall(lottoBall)) {
 
-                }
-
-                lottoBall.move(moveX,moveY);
+                lottoBall.move(moveX, moveY);
                 lottoMachine.addBallCount(lottoBall);
+                while (!lottoMachine.hitWall(lottoBall) || lottoMachine.hitBall()) {
+                    moveX = numberGenerator.generateMovement();
+                    moveY = numberGenerator.generateMovement();
+
+                    lottoBall.move(moveX, moveY);
+                }
                 lottoMachine.checkWin(lottoBall);
                 if (lottoBall.getSelected()) {
                     winningBalls.add(lottoBall);
                 }
-                lottoMachine.hitWall(lottoBall);
-
             }
         }
         printWinningNumber();
     }
 
     private void createLottoBalls() {
-        for (int i = 0; i < 45; i ++) {
+        for (int i = 0; i < 45; i++) {
             int initX = numberGenerator.generateInitIndex();
             int initY = numberGenerator.generateInitIndex();
             int lottoNumber = numberGenerator.generateLottoNumber();
 
             lottoBalls.add(new LottoBall(lottoNumber, initX, initY));
+            System.out.println("1");
         }
     }
 
     private void printWinningNumber() {
         StringBuilder sb = new StringBuilder();
 
-        for (LottoBall lottoBall: winningBalls) {
+        for (LottoBall lottoBall : winningBalls) {
             sb.append(lottoBall.getNumber())
                     .append(" ");
         }

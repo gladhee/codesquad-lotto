@@ -15,7 +15,7 @@ public class LottoMachine {
     }
 
     public boolean hitWall(LottoBall lottoBall) {
-        if (lottoBall.getX() == MAX_WALL || lottoBall.getX() == MIN_WALL || lottoBall.getY() == MAX_WALL || lottoBall.getY() == MIN_WALL){
+        if (lottoBall.getX() == MAX_WALL || lottoBall.getX() == MIN_WALL || lottoBall.getY() == MAX_WALL || lottoBall.getY() == MIN_WALL) {
             return false;
         }
         return true;
@@ -30,11 +30,10 @@ public class LottoMachine {
         return true;
     }
 
-    public void addBallCount(LottoBall lottoBall){
-            int ballX = lottoBall.getX();
-            int ballY = lottoBall.getY();
+    public void addBallCount(LottoBall lottoBall) {
+        int ballX = lottoBall.getX();
+        int ballY = lottoBall.getY();
 
-            ballCount[ballY][ballX]++;
-
+        ballCount[ballY][ballX]++;
     }
 }
